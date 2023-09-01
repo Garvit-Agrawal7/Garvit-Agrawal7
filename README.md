@@ -8,7 +8,7 @@
 💡 &nbsp; I like to explore new technologies and develop web apps and sites.\
 🎓 &nbsp; I'm currently studying at Defence Public School, Rajasthan, India\
 🌱 &nbsp; I'm on track to learning more about Web and UI design.\
-✍️ &nbsp; I am a High School Student and I am really on learning how to program. \
+✍️ &nbsp; I am a High School Student and I am really keen on learning how to program. \
 💬 &nbsp; Feel free to reach out to me.\
 ✉️ &nbsp; You can email me at garvitagrawal321@gmail.com or write on any social network below. I'll try to respond as soon as I can.
 
@@ -45,4 +45,3 @@
 ![LeetCode](https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black)
 
 </details>
-
