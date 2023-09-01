@@ -45,11 +45,6 @@
 ![LeetCode](https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black)
 
 </details>
-
-
-### ⚙️ &nbsp;GitHub Analytics
-
-<p align="center">
 <a href="https://github.com/Garvit-agrawal7">
   <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=Garvit-agrawal7&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true"/>
   <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Garvit-agrawal7&hide_border=true&cache_seconds=1800&layout=compact&langs_count=8&theme=tokyonight"/> 
