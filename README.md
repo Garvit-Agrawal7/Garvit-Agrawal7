@@ -50,5 +50,3 @@
 
 ![Garvit's GitHub stats](https://github-readme-stats.vercel.app/api?username=garvit-agrawal7&show_icons=true&theme=transparent)
 
-![visitors](https://visitor-badge.glitch.me/badge?page_id=garvit-agrawal7.https://github.com/Garvit-Agrawal7/Garvit-Agrawal7&left_color=green&right_color=red)
-
