@@ -48,7 +48,7 @@
 
 </details>
 
-[![Garvit's GitHub stats](https://github-readme-stats.vercel.app/api?username=garvit-agrawal7&theme=dracula)](https://github.com/anuraghazra/github-readme-stats)
-![Garvit's GitHub stats](https://github-readme-stats.vercel.app/api?username=garvit-agrawal7&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&theme=dracula)
-![Garvit's GitHub stats](https://github-readme-stats.vercel.app/api?username=garvit-agrawal7&show_icons=true&theme=dracula)
+![Garvit's GitHub stats](https://github-readme-stats.vercel.app/api?username=garvit-agrawal7&show_icons=true&theme=transparent)
+
+![visitors](https://visitor-badge.glitch.me/badge?page_id=garvit-agrawal7.visitor-badge&left_color=green&right_color=red)
 
