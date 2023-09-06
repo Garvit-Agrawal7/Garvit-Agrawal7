@@ -6,7 +6,7 @@
 ### 👨🏻‍💻 &nbsp;About Me :
 
 💡 &nbsp; I like to explore new technologies and develop web apps and sites.\
-🎓 &nbsp; I'm currently studying at Defence Public School, Rajasthan, India\
+🎓 &nbsp; I'm currently studying at Defence Public School \
 🌱 &nbsp; I'm on track to learning more about Web and UI design.\
 ✍️ &nbsp; I am a High School Student and I am really keen on learning how to program. \
 💬 &nbsp; Feel free to reach out to me.\
