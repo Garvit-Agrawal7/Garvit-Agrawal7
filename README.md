@@ -1,4 +1,5 @@
-![Pastel Rainbow Modern January Monthly Email Header](https://github.com/Garvit-Agrawal7/Garvit-Agrawal7/assets/134291696/8c11a70b-6e8d-4f22-b351-ea4506145b75)
+![Hey, I am Garvit Agrawal](https://github.com/Garvit-Agrawal7/Garvit-Agrawal7/assets/134291696/688a3655-1a5d-4e70-82cc-ebb99a3496ab)
+
 <img src="https://readme-typing-svg.demolab.com?font=Operator+Mono&size=37&duration=2800&pause=2000&color=FAFAFA&center=true&vCenter=true&width=940&height=50&lines=Hey%2C+I'm+Garvit+Agrawal!" align="middle" alt=" Hey, I'm Garvit Agrawal  ! animated typed out">
 
 <hr></hr>
