@@ -49,4 +49,4 @@
 </details>
 
 ![Garvit's GitHub stats](https://github-readme-stats.vercel.app/api?username=garvit-agrawal7&show_icons=true&theme=transparent)
-
+<p align="center"> <img width="125px" src="https://komarev.com/ghpvc/?username=Garvit-Agrawal7&label=Profile%20visits&color=0e75b6&style=flat" alt="Garvit-Agrawal7" /> </p> 
