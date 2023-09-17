@@ -1,4 +1,4 @@
-![Hey, I am Garvit Agrawal](https://github.com/Garvit-Agrawal7/Garvit-Agrawal7/assets/134291696/688a3655-1a5d-4e70-82cc-ebb99a3496ab)
+![3](https://github.com/Garvit-Agrawal7/Garvit-Agrawal7/assets/134291696/440aafe0-7cda-4fcd-a127-18e271dc7015)
 
 ### 👨🏻‍💻 &nbsp;About Me :
 
