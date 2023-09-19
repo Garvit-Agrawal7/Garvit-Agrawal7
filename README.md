@@ -21,7 +21,7 @@
 ![My Skills](https://skillicons.dev/icons?i=flask,selenium,bootstrap)
 
 
-![My Skills](https://skillicons.dev/icons?i=mysql,sqlite,MongoDB)
+![My Skills](https://skillicons.dev/icons?i=mysql,sqlite,mongodb)
 
 
 ![My Skills](https://skillicons.dev/icons?i=html,css)
