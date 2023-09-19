@@ -45,17 +45,18 @@
 ![Garvit's GitHub stats](https://github-readme-stats.vercel.app/api?username=garvit-agrawal7&show_icons=true&theme=transparent)
 
 
-<p align="center">
-  <a href="https://www.instagram.com/garvit_agrawal1" target="_blank" style="margin: 40px;">
+<div style="text-align: center;">
+  <a href="https://www.instagram.com/garvit_agrawal1" target="_blank" style="margin: 10px;">
     <img src="https://skillicons.dev/icons?i=instagram" alt="Instagram">
   </a>
-  <a href="https://discord.com/users/garvit_agrawal7" target="_blank" style="margin: 40px;">
+  <a href="https://discord.com/users/garvit_agrawal7" target="_blank" style="margin: 10px;">
     <img src="https://skillicons.dev/icons?i=discord" alt="Discord">
   </a>
-  <a href="https://www.linkedin.com/in/garvit-agrawal-628355291" target="_blank" style="margin: 40px;">
+  <a href="https://www.linkedin.com/in/garvit-agrawal-628355291" target="_blank" style="margin: 10px;">
     <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn">
   </a>
-</p>
+</div>
+
 
 
 
