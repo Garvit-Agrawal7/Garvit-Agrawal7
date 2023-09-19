@@ -13,34 +13,14 @@
 <img src="https://raw.githubusercontent.com/vitasha10/vitasha10/master/assets/Night-Coding.gif" align="right"/>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=js,python,java,c,react" alt="My Skills">
-  <br>
-  JavaScript, Python, Java, C, React
+  <img src="https://skillicons.dev/icons?i=js,python,java,c,react,nodejs,nextjs,express,jquery" alt="My Skills">
 </p>
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=nodejs,nextjs,express,jquery" alt="My Skills">
-  <br>
-  Node.js, Next.js, Express, jQuery
-</p>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=flask,selenium,bootstrap" alt="My Skills">
-  <br>
-  Flask, Selenium, Bootstrap
+  <img src="https://skillicons.dev/icons?i=flask,selenium,bootstrap,mysql,sqlite,MongoDB,html,css" alt="My Skills">
 </p>
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=mysql,sqlite,mongodb" alt="My Skills">
-  <br>
-  MySQL, SQLite, MongoDB
-</p>
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css" alt="My Skills">
-  <br>
-  HTML, CSS
-</p>
 
 
 
