@@ -18,7 +18,7 @@
 
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=flask,selenium,bootstrap,mysql,sqlite,MongoDB,html,css" alt="My Skills">
+  <img src="https://skillicons.dev/icons?i=flask,selenium,bootstrap,mysql,sqlite,mongodb,html,css" alt="My Skills">
 </p>
 
 
