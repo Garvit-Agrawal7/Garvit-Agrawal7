@@ -12,7 +12,7 @@
 ### 🛠 &nbsp;Tech Stack
 <img src="https://raw.githubusercontent.com/vitasha10/vitasha10/master/assets/Night-Coding.gif" align="right"/>
 
-[My Skills](https://skillicons.dev/icons?i=js,python,java,c,react)
+![My Skills](https://skillicons.dev/icons?i=js,python,java,c,react)
 
 
 ![My Skills](https://skillicons.dev/icons?i=nodejs,nextjs,express,jquery)
