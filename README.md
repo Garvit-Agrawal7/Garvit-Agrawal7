@@ -24,7 +24,7 @@
 [![My Skills](https://skillicons.dev/icons?i=html,css,bootstrap)](https://skillicons.dev)
 
 
-[![My Skills](https://skillicons.dev/icons?i=sql,mysql,mongodb)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=mysql,mysql,mongodb)](https://skillicons.dev)
 
 
 <details>
