@@ -45,5 +45,17 @@
 ![Garvit's GitHub stats](https://github-readme-stats.vercel.app/api?username=garvit-agrawal7&show_icons=true&theme=transparent)
 
 
-:[![My Skills](https://skillicons.dev/icons?i=instagram)](https://www.instagram.com/garvit_agrawal1)&nbsp;[![My Skills](https://skillicons.dev/icons?i=discord)](https://discord.com/users/garvit_agrawal7)&nbsp;[![My Skills](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/garvit-agrawal-628355291):
+<p align="center">
+  <a href="https://www.instagram.com/garvit_agrawal1" target="_blank">
+    <img src="https://skillicons.dev/icons?i=instagram" alt="Instagram" style="margin: 10px;">
+  </a>
+  <a href="https://discord.com/users/garvit_agrawal7" target="_blank">
+    <img src="https://skillicons.dev/icons?i=discord" alt="Discord" style="margin: 10px;">
+  </a>
+  <a href="https://www.linkedin.com/in/garvit-agrawal-628355291" target="_blank">
+    <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" style="margin: 10px;">
+  </a>
+</p>
+
+
 <p align="center"> <img width="125px" src="https://komarev.com/ghpvc/?username=Garvit-Agrawal7&label=Profile%20visits&color=0e75b6&style=flat" alt="Garvit-Agrawal7" /> </p> 
