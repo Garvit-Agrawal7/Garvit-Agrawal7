@@ -12,26 +12,26 @@
 ### 🛠 &nbsp;Tech Stack
 <img src="https://raw.githubusercontent.com/vitasha10/vitasha10/master/assets/Night-Coding.gif" align="right"/>
 
-[![My Skills](https://skillicons.dev/icons?i=js,python,java,c)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,python,java,c,react)]
 
 
-[![My Skills](https://skillicons.dev/icons?i=react,nodejs,nextjs,selenium)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=,nodejs,nextjs,express,jquery)]
 
 
-[![My Skills](https://skillicons.dev/icons?i=express,jquery,flask)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=flask,selenium,bootstrap)]
 
 
-[![My Skills](https://skillicons.dev/icons?i=html,css,bootstrap)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=mysql,sqlite,MongoDB)]
 
 
-[![My Skills](https://skillicons.dev/icons?i=mysql,sqlite,mongodb)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=html,css)]
 
 
 <details>
 <summary>More Skills</summary>
 
 
-[![My Skills](https://skillicons.dev/icons?i=vscode,replit,git,github,heroku,powershell)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=vscode,replit,git,github,heroku,powershell)]
 
 
 ![PyCharm](https://img.shields.io/badge/PyCharm-000000.svg?style=for-the-badge&logo=PyCharm&logoColor=white)&nbsp;
