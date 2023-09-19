@@ -48,10 +48,10 @@
 <p align="center">
   <a href="https://www.instagram.com/garvit_agrawal1" target="_blank">
     <img src="https://skillicons.dev/icons?i=instagram" alt="Instagram">
-  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://discord.com/users/garvit_agrawal7" target="_blank">
     <img src="https://skillicons.dev/icons?i=discord" alt="Discord">
-  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/garvit-agrawal-628355291" target="_blank">
     <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn">
   </a>
