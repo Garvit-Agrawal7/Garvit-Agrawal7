@@ -12,19 +12,36 @@
 ### 🛠 &nbsp;Tech Stack
 <img src="https://raw.githubusercontent.com/vitasha10/vitasha10/master/assets/Night-Coding.gif" align="right"/>
 
-![My Skills](https://skillicons.dev/icons?i=js,python,java,c,react)
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=js,python,java,c,react" alt="My Skills">
+  <br>
+  JavaScript, Python, Java, C, React
+</p>
 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=nodejs,nextjs,express,jquery" alt="My Skills">
+  <br>
+  Node.js, Next.js, Express, jQuery
+</p>
 
-![My Skills](https://skillicons.dev/icons?i=nodejs,nextjs,express,jquery)
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=flask,selenium,bootstrap" alt="My Skills">
+  <br>
+  Flask, Selenium, Bootstrap
+</p>
 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=mysql,sqlite,mongodb" alt="My Skills">
+  <br>
+  MySQL, SQLite, MongoDB
+</p>
 
-![My Skills](https://skillicons.dev/icons?i=flask,selenium,bootstrap)
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css" alt="My Skills">
+  <br>
+  HTML, CSS
+</p>
 
-
-![My Skills](https://skillicons.dev/icons?i=mysql,sqlite,mongodb)
-
-
-![My Skills](https://skillicons.dev/icons?i=html,css)
 
 
 <details>
