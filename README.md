@@ -28,7 +28,7 @@
 <summary>More Skills</summary>
 
 
-![My Skills](https://skillicons.dev/icons?i=vscode,replit,git,github,heroku,powershell)
+![My Skills](https://skillicons.dev/icons?i=vscode,replit,git,github,heroku,powershell,bash)
 
 
 ![PyCharm](https://img.shields.io/badge/PyCharm-000000.svg?style=for-the-badge&logo=PyCharm&logoColor=white)&nbsp;
