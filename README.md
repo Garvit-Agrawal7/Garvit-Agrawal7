@@ -39,7 +39,6 @@
 
 </details>
 
-![Garvit's GitHub stats](https://github-readme-stats.vercel.app/api?username=garvit-agrawal7&show_icons=true&theme=transparent)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=garvit-agrawal7&layout=compact&theme=transparent)
 
 
