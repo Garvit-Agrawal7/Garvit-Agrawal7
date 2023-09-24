@@ -45,8 +45,7 @@
 <a href="https://github.com/anuraghazra/convoychat">
   <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=garvit-agrawal7&layout=compact&theme=transparent" />
 </a>
-![Garvit's GitHub stats]()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
-![Top Langs](t)
+
 
 
 <p align="center">
@@ -60,8 +59,6 @@
     <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn">
   </a>
 </p>
-
-
 
 
 
