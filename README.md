@@ -39,9 +39,8 @@
 
 </details>
 <p><a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align=centre 
-  src="https://github-readme-stats.vercel.app/api?username=garvit-agrawal7&hide=contribs&theme=transparent" />
-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github-readme-stats.vercel.app/api?username=garvit-agrawal7&hide=contribs&theme=transparent" />
+</a></p>
 
 
 
