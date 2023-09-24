@@ -39,10 +39,10 @@
 
 </details>
 <p><a href="https://github.com/anuraghazra/github-readme-stats">
-  <img height=200px align="center" width=300px src="https://github-readme-stats.vercel.app/api?username=garvit-agrawal7&hide=contribs&theme=transparent" />
+  <img height=200 align="center" width=400 src="https://github-readme-stats.vercel.app/api?username=garvit-agrawal7&hide=contribs&theme=transparent" />
 </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://github.com/anuraghazra/convoychat">
-  <img height=200 align="center" width=300px src="https://github-readme-stats.vercel.app/api/top-langs/?username=garvit-agrawal7&layout=compact&theme=transparent" />
+  <img height=200 align="center" width=400 src="https://github-readme-stats.vercel.app/api/top-langs/?username=garvit-agrawal7&layout=compact&theme=transparent" />
 </a></p><br><br>
 
 
