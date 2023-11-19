@@ -10,8 +10,6 @@
 ✉️ &nbsp; You can email me at garvitagrawal321@gmail.com or write on any social network below. I'll try to respond as soon as I can.
 
 ### 🛠 &nbsp;Tech Stack
-<img src="https://raw.githubusercontent.com/vitasha10/vitasha10/master/assets/Night-Coding.gif" align="right"/>
-
 <p align="center">
   <img src="https://skillicons.dev/icons?i=js,python,java,c,react,nodejs,nextjs,express,jquery" alt="My Skills">
 </p>
