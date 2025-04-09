@@ -3,11 +3,7 @@
 ### 👨🏻‍💻 &nbsp;About Me :
 
 💡 &nbsp; I like to explore new technologies and develop programs that could help someone.  
-🎓 &nbsp; I'm currently studying at Defence Public School.\
-🌱 &nbsp; I'm on track to learning more about Python.\
-✍️ &nbsp; I am a High School Student keen on learning how to program.\
-💬 &nbsp; Feel free to reach out to me.\
-✉️ &nbsp; You can email me at garvitagrawal321@gmail.com or write on any social network below. I'll try to respond as soon as I can.
+🌱 &nbsp; I'm on track to learning more about Java.\
 
 ### 🛠 &nbsp;Tech Stack
 <p align="center">
