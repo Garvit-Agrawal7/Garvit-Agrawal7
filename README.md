@@ -3,7 +3,7 @@
 ### 👨🏻‍💻 &nbsp;About Me :
 
 💡 &nbsp; I like to explore new technologies and develop programs that could help someone.  
-🌱 &nbsp; Currently learning more about Assembly.
+🌱 &nbsp; Currently learning more about OS Dev.
 
 ### 🛠 &nbsp;Tech Stack
 <p align="center">
