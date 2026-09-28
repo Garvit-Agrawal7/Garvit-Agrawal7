@@ -10,6 +10,7 @@ Needs GH_TOKEN (the workflow passes one) and GH_USER. Standard library only.
 import datetime as dt
 import json
 import os
+import random
 import sys
 import urllib.request
 from html import escape
@@ -169,6 +170,89 @@ def marquee_row(items, base, size, fill, squares, reverse, speed):
             f'dur="{seq / speed:.1f}s" repeatCount="indefinite"/></g></g>')
 
 
+GLYPHS = "0123456789#%&$@"
+
+
+def decrypt(value, x, y, size, start, seed, frame=0.06, per_char=0.18):
+    """One-shot scramble: random glyphs that lock into the real value, left to right."""
+    rnd = random.Random(seed)
+    cw = size * 0.6
+    width = len(value) * cw
+    locks = [start + k * per_char for k in range(len(value))]
+    end = locks[-1]
+    common = (f'class="m" x="{x}" y="{y}" font-size="{size}" font-weight="500" '
+              f'textLength="{width:.1f}" lengthAdjust="spacing"')
+    o = []
+    tt = 0.0
+    while tt < end:
+        chars = "".join(ch if tt >= lk else rnd.choice(GLYPHS) for ch, lk in zip(value, locks))
+        o.append(f'<text {common} fill="{ACCENT}" fill-opacity=".75" opacity="0">{escape(chars)}'
+                 f'<set attributeName="opacity" to="1" begin="{tt:.2f}s" dur="{frame}s"/></text>')
+        tt += frame
+    # visible by default, so viewers without animation support still see the number
+    o.append(f'<text {common} fill="{TEXT}">{escape(value)}'
+             f'<set attributeName="opacity" to="0" begin="0s" dur="{end:.2f}s"/>'
+             f'<animate attributeName="fill" from="{ACCENT}" to="{TEXT}" begin="{end:.2f}s" dur="0.8s" '
+             f'fill="freeze"/></text>')
+    return "".join(o)
+
+
+def snake_path(targets, cols):
+    """Greedy route: from the left edge, always head for the nearest cell with contributions."""
+    path = [(-5, 3), (-4, 3), (-3, 3), (-2, 3), (-1, 3)]
+    left = set(targets)
+    while left:
+        hc, hr = path[-1]
+        tc, tr = min(left, key=lambda cell: (abs(cell[0] - hc) + abs(cell[1] - hr), cell[0], cell[1]))
+        while (hc, hr) != (tc, tr):
+            if hr != tr:
+                hr += 1 if tr > hr else -1
+            else:
+                hc += 1 if tc > hc else -1
+            path.append((hc, hr))
+            left.discard((hc, hr))
+    hc, hr = path[-1]
+    while hc < cols + 5:
+        hc += 1
+        path.append((hc, hr))
+    return path
+
+
+def snake_grid(weeks, x0, y0, pitch, step=0.08, pause=1.5, length=6):
+    cells = {(c, wd): LEVELS.get(level, 0.1) for c, week in enumerate(weeks) for wd, level, _ in week}
+    targets = [cell for cell, lv in cells.items() if lv > 0.1]
+    path = snake_path(targets, len(weeks))
+    total = len(path) * step + pause
+    eaten = {}
+    for i, cell in enumerate(path):
+        if cell in cells and cell not in eaten:
+            eaten[cell] = i * step / total
+    o = [f'<clipPath id="grid"><rect x="{x0 - 2}" y="{y0 - 2}" width="{len(weeks) * pitch + 2:.1f}" '
+         f'height="{7 * pitch + 2:.1f}"/></clipPath>']
+    for (c, r), lv in cells.items():
+        x, y = x0 + c * pitch, y0 + r * pitch
+        anim = ""
+        if lv > 0.1:
+            anim = (f'<animate attributeName="opacity" values="{lv};0.1" keyTimes="0;{eaten[(c, r)]:.4f}" '
+                    f'calcMode="discrete" dur="{total:.2f}s" repeatCount="indefinite"/>')
+        o.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="10" height="10" rx="2" fill="{ACCENT}" '
+                 f'opacity="{lv}">{anim}</rect>')
+    kt = ";".join(f"{i * step / total:.4f}" for i in range(len(path))) + ";1"
+    o.append('<g clip-path="url(#grid)">')
+    for k in range(length - 1, -1, -1):
+        pts = [path[max(0, i - k)] for i in range(len(path))] + [path[-1]]
+        vals = ";".join(f"{x0 + c * pitch:.1f} {y0 + r * pitch:.1f}" for c, r in pts)
+        size = 10 if k == 0 else 10 - k * 0.6
+        off = (10 - size) / 2
+        colour = "#ffffff" if k == 0 else ACCENT
+        o.append(f'<rect x="{off:.1f}" y="{off:.1f}" width="{size:.1f}" height="{size:.1f}" rx="3" '
+                 f'fill="{colour}" opacity="{1 - k * 0.1:.2f}"><animateTransform attributeName="transform" '
+                 f'type="translate" values="{vals}" keyTimes="{kt}" dur="{total:.2f}s" '
+                 f'repeatCount="indefinite"/></rect>')
+    o.append("</g>")
+    return "".join(o)
+
+
 # ----------------------------------------------------------------- profile svg
 def section_label(num, name, y):
     return (f'<text class="m" x="48" y="{y}" font-size="11" letter-spacing="1.5" fill="{MUTED}" '
@@ -218,28 +302,19 @@ def profile_svg(d):
              ("PULL REQUESTS", fmt(d["prs"]), ""),
              ("STARS EARNED", fmt(d["stars"]), ""),
              ("LONGEST STREAK", str(longest_streak(d["weeks"])), " days")]
+    # tiles: the numbers decrypt once when the README opens, then stay put
     for i, (label, value, unit) in enumerate(tiles):
         x = 48 + i * 189
-        o.append(f'<clipPath id="tile{i}"><rect x="{x}" y="432" width="177" height="96" rx="10"/></clipPath>')
         o.append(f'<rect x="{x + .5}" y="432.5" width="176" height="95" rx="10" fill="{PANEL}" stroke="{BORDER}"/>')
-        o.append(f'<g clip-path="url(#tile{i})"><rect x="{x - 70}" y="432" width="70" height="1.5" fill="{ACCENT}">'
-                 f'<animate attributeName="x" values="{x - 70};{x + 177};{x + 177}" keyTimes="0;.45;1" '
-                 f'dur="4s" begin="{i * 0.5}s" repeatCount="indefinite"/></rect></g>')
         o.append(t(x + 18, 464, label, 11, MUTED, extra=' letter-spacing="0.8"'))
-        u = f'<tspan font-size="16" fill="{MUTED}">{unit}</tspan>' if unit else ""
-        o.append(f'<text class="m" x="{x + 18}" y="508" font-size="30" font-weight="500" fill="{TEXT}" '
-                 f'xml:space="preserve">{value}{u}</text>')
+        o.append(decrypt(value, x + 18, 508, 30, start=0.35 + i * 0.25, seed=i))
+        if unit:
+            o.append(f'<text class="m" x="{x + 18 + len(value) * 18}" y="508" font-size="16" fill="{MUTED}" '
+                     f'xml:space="preserve">{unit}</text>')
 
+    # contribution grid with a snake that eats it
     o.append(f'<rect x="48.5" y="544.5" width="743" height="163" rx="10" fill="{PANEL}" stroke="{BORDER}"/>')
-    pitch = 13.2
-    for c, week in enumerate(d["weeks"][-53:]):
-        for wd, level, _ in week:
-            base = LEVELS.get(level, 0.1)
-            peak = min(1.0, base + 0.5)
-            x, y = 68 + c * pitch, 564 + wd * pitch
-            o.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="10" height="10" rx="2" fill="{ACCENT}" opacity="{base}">'
-                     f'<animate attributeName="opacity" values="{base};{peak};{base};{base}" '
-                     f'keyTimes="0;.1;.28;1" dur="5s" begin="{(c + wd) * 0.045:.3f}s" repeatCount="indefinite"/></rect>')
+    o.append(snake_grid(d["weeks"][-53:], 68, 564, 13.2))
     o.append(t(68, 690, "contributions \u00b7 last 12 months", 12, MUTED))
     o.append(t(772, 690, f"{fmt(d['total'])} total", 12, MUTED, anchor="end"))
 
