@@ -1,5 +1,5 @@
 <a href="https://github.com/Garvit-Agrawal7">
-  <img src="./assets/profile.svg" width="100%" alt="Garvit Agrawal — backend developer at SustematiQ. Python, FastAPI, Flask, Node.js, Redis, PostgreSQL, MongoDB. Live GitHub activity.">
+  <img src="./assets/profile.svg" width="100%" alt="Garvit Agrawal. Python, FastAPI, Flask, Node.js, Redis, PostgreSQL, MongoDB. Live GitHub activity.">
 </a>
 
 <p>
