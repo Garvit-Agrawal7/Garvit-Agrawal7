@@ -21,13 +21,13 @@ ACCENT = "#d2a8ff"
 GREEN = "#3fb950"
 
 INTRO = "hi, i\u2019m garvit agrawal \u2014 backend developer at SustematiQ"
-PHRASES = ["design APIs.", "ship services.", "explore OS dev."]
+PHRASES = ["design APIs.", "ship services.", "scale backends."]
 STATUS = "currently exploring OS dev  \u00b7  IST (UTC+5:30)"
 
 STACK_MAIN = ["Python", "FastAPI", "Flask", "Node.js", "Express", "Redis", "PostgreSQL", "MySQL", "MongoDB"]
 STACK_MORE = ["C", "x86", "JavaScript", "Java", "SQLite", "Selenium", "React", "Next.js", "AWS", "Azure", "Linux"]
 
-FEATURED = ["GameLog-Backend", "database_backup", "pipemix", "cli-os"]
+FEATURED = ["GameLog", "GameLog-Backend", "database_backup", "pipemix", "Flight-Deals", "movie-recom"]
 
 # ------------------------------------------------------------------- palette
 BG, PANEL, BORDER, RULE = "#0d1117", "#151b23", "#262c36", "#21262d"
