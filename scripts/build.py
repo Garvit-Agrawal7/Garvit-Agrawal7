@@ -24,10 +24,10 @@ INTRO = "hi, i\u2019m garvit agrawal \u2014 backend developer at SustematiQ"
 PHRASES = ["design APIs.", "ship services.", "explore OS dev."]
 STATUS = "currently exploring OS dev  \u00b7  IST (UTC+5:30)"
 
-STACK_MAIN = ["Python", "Flask", "Node.js", "Express", "MySQL", "PostgreSQL", "MongoDB", "SQLite"]
-STACK_MORE = ["JavaScript", "Java", "C", "React", "Next.js", "Selenium", "AWS", "Azure", "Linux"]
+STACK_MAIN = ["Python", "FastAPI", "Flask", "Node.js", "Express", "Redis", "PostgreSQL", "MySQL", "MongoDB"]
+STACK_MORE = ["C", "x86", "JavaScript", "Java", "SQLite", "Selenium", "React", "Next.js", "AWS", "Azure", "Linux"]
 
-FEATURED = ["database_backup", "pipemix", "movie-recom", "Flight-Deals"]
+FEATURED = ["GameLog-Backend", "database_backup", "pipemix", "cli-os"]
 
 # ------------------------------------------------------------------- palette
 BG, PANEL, BORDER, RULE = "#0d1117", "#151b23", "#262c36", "#21262d"
@@ -48,7 +48,7 @@ query($login:String!, $from:DateTime!, $to:DateTime!) {
       nodes { name description stargazerCount primaryLanguage { name } }
     }
     year: contributionsCollection(from:$from, to:$to) {
-      totalCommitContributions restrictedContributionsCount
+      contributionCalendar { totalContributions }
     }
     contributionsCollection {
       contributionCalendar {
@@ -80,7 +80,7 @@ def fetch():
     repos = u["repositories"]["nodes"]
     return {
         "year": now.year,
-        "commits": u["year"]["totalCommitContributions"] + u["year"]["restrictedContributionsCount"],
+        "year_total": u["year"]["contributionCalendar"]["totalContributions"],
         "prs": u["pullRequests"]["totalCount"],
         "stars": sum(r["stargazerCount"] for r in repos),
         "total": cal["totalContributions"],
@@ -214,7 +214,7 @@ def profile_svg(d):
     o.append(f'<circle cx="{792 - len(live) * 7.2 - 11:.1f}" cy="408" r="3" fill="{ACCENT}">'
              f'<animate attributeName="opacity" values="1;.3;1" dur="2s" repeatCount="indefinite"/></circle>')
 
-    tiles = [(f"COMMITS \u00b7 {d['year']}", fmt(d["commits"]), ""),
+    tiles = [(f"CONTRIBUTIONS \u00b7 {d['year']}", fmt(d["year_total"]), ""),
              ("PULL REQUESTS", fmt(d["prs"]), ""),
              ("STARS EARNED", fmt(d["stars"]), ""),
              ("LONGEST STREAK", str(longest_streak(d["weeks"])), " days")]
