@@ -1,25 +1,18 @@
-![3](https://github.com/Garvit-Agrawal7/Garvit-Agrawal7/assets/134291696/440aafe0-7cda-4fcd-a127-18e271dc7015)
+<a href="https://github.com/Garvit-Agrawal7">
+  <img src="./assets/profile.svg" width="100%" alt="Garvit Agrawal — backend developer at SustematiQ. Python, Flask, Node.js, Express, MySQL, PostgreSQL, MongoDB. Live GitHub activity.">
+</a>
 
-### 👨🏻‍💻 &nbsp;About Me :
-
-💡 &nbsp; I like to explore new technologies and develop programs that could help someone.  
-🌱 &nbsp; Currently learning more about OS Dev.
-
-### 🛠 &nbsp;Tech Stack
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=js,python,java,c,react,nodejs,nextjs,express,jquery" alt="My Skills">
+<p>
+  <a href="https://github.com/Garvit-Agrawal7/database_backup"><img src="./assets/cards/database_backup.svg" width="49%" alt="database_backup — CLI for backing up MySQL, PostgreSQL and MongoDB locally or to the cloud"></a>
+  <a href="https://github.com/Garvit-Agrawal7/pipemix"><img src="./assets/cards/pipemix.svg" width="49%" alt="pipemix — play audio through several devices at once on Linux and Windows"></a>
+</p>
+<p>
+  <a href="https://github.com/Garvit-Agrawal7/movie-recom"><img src="./assets/cards/movie-recom.svg" width="49%" alt="movie-recom — mood-based movie recommendations, Flutter + Flask"></a>
+  <a href="https://github.com/Garvit-Agrawal7/Flight-Deals"><img src="./assets/cards/Flight-Deals.svg" width="49%" alt="Flight-Deals — finds cheap flights and emails you"></a>
 </p>
 
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=flask,selenium,bootstrap,mysql,sqlite,mongodb,html,css" alt="My Skills">
+<p>
+  <a href="https://www.linkedin.com/in/garvit-agrawal7/"><code>linkedin ↗</code></a>&nbsp;
+  <a href="https://github.com/Garvit-Agrawal7?tab=repositories"><code>all repos ↗</code></a>&nbsp;
+  <code>Rajasthan, India · IST (UTC+5:30)</code>
 </p>
-
-
-# 📊 GitHub Stats:
-![](https://github-readme-stats.shion.dev/api?username=Garvit-Agrawal7&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
-![](https://streak-stats.demolab.com/?user=Garvit-Agrawal7&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.shion.dev/api/top-langs/?username=Garvit-Agrawal7&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
-
----
-<p align="center"> <img width="125px" src="https://komarev.com/ghpvc/?username=Garvit-Agrawal7&label=Profile%20visits&color=0e75b6&style=flat" alt="Garvit-Agrawal7" /> </p> 
