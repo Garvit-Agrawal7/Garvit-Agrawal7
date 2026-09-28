@@ -16,37 +16,10 @@
 </p>
 
 
+# 📊 GitHub Stats:
+![](https://github-readme-stats.shion.dev/api?username=Garvit-Agrawal7&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
+![](https://streak-stats.demolab.com/?user=Garvit-Agrawal7&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.shion.dev/api/top-langs/?username=Garvit-Agrawal7&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
-
-<details>
-<summary>More Skills</summary>
-
-
-![My Skills](https://skillicons.dev/icons?i=vscode,replit,git,github,heroku,powershell,bash)
-
-
-![PyCharm](https://img.shields.io/badge/PyCharm-000000.svg?style=for-the-badge&logo=PyCharm&logoColor=white)&nbsp;
-![WebStorm](https://img.shields.io/badge/WebStorm-000000.svg?style=for-the-badge&logo=WebStorm&logoColor=white)&nbsp;
-![CLion](https://img.shields.io/badge/CLion-000000.svg?style=for-the-badge&logo=CLion&logoColor=white)&nbsp;
-![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
-
-
-
-
-
-<p align="center">
-  <a href="https://www.instagram.com/garvit_agrawal1" target="_blank">
-    <img src="https://skillicons.dev/icons?i=instagram" alt="Instagram">
-  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://discord.com/users/garvit_agrawal7" target="_blank">
-    <img src="https://skillicons.dev/icons?i=discord" alt="Discord">
-  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://www.linkedin.com/in/garvit-agrawal7/" target="_blank">
-    <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn">
-  </a>
-</p>
-
-
-
+---
 <p align="center"> <img width="125px" src="https://komarev.com/ghpvc/?username=Garvit-Agrawal7&label=Profile%20visits&color=0e75b6&style=flat" alt="Garvit-Agrawal7" /> </p> 
-
