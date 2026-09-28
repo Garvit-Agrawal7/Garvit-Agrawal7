@@ -21,7 +21,7 @@ USER = os.environ.get("GH_USER", "Garvit-Agrawal7")
 ACCENT = "#d2a8ff"
 GREEN = "#3fb950"
 
-INTRO = "hi, i\u2019m garvit agrawal \u2014 backend developer at SustematiQ"
+INTRO = "hi, i\u2019m garvit agrawal"
 PHRASES = ["design APIs.", "ship services.", "scale backends."]
 STATUS = "currently exploring OS dev  \u00b7  IST (UTC+5:30)"
 
@@ -173,7 +173,7 @@ def marquee_row(items, base, size, fill, squares, reverse, speed):
 GLYPHS = "0123456789#%&$@"
 
 
-def decrypt(value, x, y, size, start, seed, frame=0.06, per_char=0.18):
+def decrypt(value, x, y, size, start, seed, frame=0.09, per_char=0.38):
     """One-shot scramble: random glyphs that lock into the real value, left to right."""
     rnd = random.Random(seed)
     cw = size * 0.6
@@ -266,7 +266,7 @@ LEVELS = {"NONE": 0.1, "FIRST_QUARTILE": 0.35, "SECOND_QUARTILE": 0.55,
 def profile_svg(d):
     W, H = 840, 784
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
-         f'role="img" aria-label="Garvit Agrawal, backend developer">', STYLE]
+         f'role="img" aria-label="Garvit Agrawal">', STYLE]
     o.append('<defs><linearGradient id="fg"><stop offset="0" stop-color="#000"/>'
              '<stop offset=".12" stop-color="#fff"/><stop offset=".88" stop-color="#fff"/>'
              '<stop offset="1" stop-color="#000"/></linearGradient>'
@@ -307,7 +307,7 @@ def profile_svg(d):
         x = 48 + i * 189
         o.append(f'<rect x="{x + .5}" y="432.5" width="176" height="95" rx="10" fill="{PANEL}" stroke="{BORDER}"/>')
         o.append(t(x + 18, 464, label, 11, MUTED, extra=' letter-spacing="0.8"'))
-        o.append(decrypt(value, x + 18, 508, 30, start=0.35 + i * 0.25, seed=i))
+        o.append(decrypt(value, x + 18, 508, 30, start=0.9 + i * 0.45, seed=i))
         if unit:
             o.append(f'<text class="m" x="{x + 18 + len(value) * 18}" y="508" font-size="16" fill="{MUTED}" '
                      f'xml:space="preserve">{unit}</text>')

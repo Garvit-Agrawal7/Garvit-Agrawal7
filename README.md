@@ -1,5 +1,5 @@
 <a href="https://github.com/Garvit-Agrawal7">
-  <img src="./assets/profile.svg" width="100%" alt="Garvit Agrawal. Python, FastAPI, Flask, Node.js, Redis, PostgreSQL, MongoDB. Live GitHub activity.">
+  <img src="./assets/profile.svg" width="100%" alt="Garvit Agrawal — backend developer at SustematiQ. Python, FastAPI, Flask, Node.js, Redis, PostgreSQL, MongoDB. Live GitHub activity.">
 </a>
 
 <p>
@@ -18,4 +18,5 @@
 <p>
   <a href="https://www.linkedin.com/in/garvit-agrawal7/"><code>linkedin ↗</code></a>&nbsp;
   <a href="https://github.com/Garvit-Agrawal7?tab=repositories"><code>all repos ↗</code></a>&nbsp;
+  <code>Rajasthan, India · IST (UTC+5:30)</code>
 </p>
