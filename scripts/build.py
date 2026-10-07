@@ -54,7 +54,7 @@ query($login:String!, $from:DateTime!, $to:DateTime!) {
     contributionsCollection {
       contributionCalendar {
         totalContributions
-        weeks { contributionDays { contributionCount contributionLevel weekday } }
+        weeks { contributionDays { contributionCount contributionLevel weekday date } }
       }
     }
   }
@@ -85,16 +85,72 @@ def fetch():
         "prs": u["pullRequests"]["totalCount"],
         "stars": sum(r["stargazerCount"] for r in repos),
         "total": cal["totalContributions"],
-        "weeks": [[(d["weekday"], d["contributionLevel"], d["contributionCount"])
+        "weeks": [[(d["weekday"], d["contributionLevel"], d["contributionCount"], d["date"])
                    for d in w["contributionDays"]] for w in cal["weeks"]],
         "repos": {r["name"]: r for r in repos},
     }
 
 
+# --------------------------------------------------------------------- gitea
+# Optional: add contributions from your organisation's Gitea. Only daily counts are
+# read (no repo names or code). Set GITEA_URL, GITEA_USER and GITEA_TOKEN, or drop a
+# heatmap export at data/gitea-heatmap.json if Gitea isn't reachable from GitHub.
+LOCAL_TZ = dt.timezone(dt.timedelta(hours=5, minutes=30))  # IST: Gitea buckets are grouped by local day
+GITEA_FILE = ROOT / "data" / "gitea-heatmap.json"
+
+
+def fetch_gitea():
+    url = os.environ.get("GITEA_URL", "").rstrip("/")
+    user = os.environ.get("GITEA_USER", "")
+    token = os.environ.get("GITEA_TOKEN", "")
+    raw = None
+    if url and user and token:
+        req = urllib.request.Request(f"{url}/api/v1/users/{user}/heatmap", headers={
+            "Authorization": f"token {token}", "User-Agent": "profile-builder"})
+        try:
+            with urllib.request.urlopen(req, timeout=20) as r:
+                raw = json.load(r)
+        except Exception as exc:  # unreachable or bad token: carry on with GitHub only
+            print(f"warning: Gitea heatmap unavailable ({exc})", file=sys.stderr)
+    if raw is None and GITEA_FILE.exists():
+        raw = json.loads(GITEA_FILE.read_text())
+    days = {}
+    for entry in raw or []:
+        day = dt.datetime.fromtimestamp(entry["timestamp"], LOCAL_TZ).date().isoformat()
+        days[day] = days.get(day, 0) + entry["contributions"]
+    return days
+
+
+def relevel(weeks):
+    """Recompute GitHub-style quartile levels after counts have changed."""
+    counts = sorted(c for w in weeks for _, _, c, _ in w if c)
+    if not counts:
+        return weeks
+    q = [counts[int(len(counts) * f) - 1] if int(len(counts) * f) else counts[0] for f in (.25, .5, .75)]
+
+    def level(c):
+        if not c:
+            return "NONE"
+        return ("FIRST_QUARTILE" if c <= q[0] else "SECOND_QUARTILE" if c <= q[1]
+                else "THIRD_QUARTILE" if c <= q[2] else "FOURTH_QUARTILE")
+    return [[(wd, level(c), c, day) for wd, _, c, day in w] for w in weeks]
+
+
+def merge_gitea(d, extra):
+    if not extra:
+        return d
+    weeks = [[(wd, lvl, c + extra.get(day, 0), day) for wd, lvl, c, day in w] for w in d["weeks"]]
+    d["weeks"] = relevel(weeks)
+    d["total"] = sum(c for w in weeks for _, _, c, _ in w)
+    d["year_total"] += sum(v for day, v in extra.items() if day.startswith(f"{d['year']}-"))
+    d["work"] = True
+    return d
+
+
 def longest_streak(weeks):
     best = run = 0
     for w in weeks:
-        for _, _, count in w:
+        for _, _, count, _ in w:
             run = run + 1 if count else 0
             best = max(best, run)
     return best
@@ -219,7 +275,7 @@ def snake_path(targets, cols):
 
 
 def snake_grid(weeks, x0, y0, pitch, step=0.08, pause=1.5, length=6):
-    cells = {(c, wd): LEVELS.get(level, 0.1) for c, week in enumerate(weeks) for wd, level, _ in week}
+    cells = {(c, wd): LEVELS.get(level, 0.1) for c, week in enumerate(weeks) for wd, level, *_ in week}
     targets = [cell for cell, lv in cells.items() if lv > 0.1]
     path = snake_path(targets, len(weeks))
     total = len(path) * step + pause
@@ -292,7 +348,7 @@ def profile_svg(d):
 
     # 02 activity
     o.append(section_label("02", "ACTIVITY", 412))
-    live = "live from GitHub"
+    live = "live"
     o.append(t(792, 412, live, 12, MUTED, anchor="end",
                extra=f' textLength="{len(live) * 7.2:.1f}" lengthAdjust="spacing"'))
     o.append(f'<circle cx="{792 - len(live) * 7.2 - 11:.1f}" cy="408" r="3" fill="{ACCENT}">'
@@ -381,5 +437,5 @@ def build(d):
 
 
 if __name__ == "__main__":
-    build(fetch())
+    build(merge_gitea(fetch(), fetch_gitea()))
     print("profile assets written to", OUT)
