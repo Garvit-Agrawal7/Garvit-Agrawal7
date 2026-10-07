@@ -92,26 +92,35 @@ def fetch():
 
 
 # --------------------------------------------------------------------- gitea
-# Optional: add contributions from your organisation's Gitea. Only daily counts are
-# read (no repo names or code). Set GITEA_URL, GITEA_USER and GITEA_TOKEN, or drop a
-# heatmap export at data/gitea-heatmap.json if Gitea isn't reachable from GitHub.
+# Optional: add activity from your organisation's Gitea. Only daily contribution counts
+# and the number of pull requests you opened are read (no repo names or code). Set
+# GITEA_URL, GITEA_USER and GITEA_TOKEN (token scopes: user Read, issue Read), or, if
+# Gitea isn't reachable from GitHub, drop exports at data/gitea-heatmap.json and
+# data/gitea-prs.json (a bare number).
 LOCAL_TZ = dt.timezone(dt.timedelta(hours=5, minutes=30))  # IST: Gitea buckets are grouped by local day
 GITEA_FILE = ROOT / "data" / "gitea-heatmap.json"
+GITEA_PRS_FILE = ROOT / "data" / "gitea-prs.json"
 
 
-def fetch_gitea():
+def gitea_get(path):
+    """GET from the Gitea API; returns (json, headers) or (None, None) if not configured or failing."""
     url = os.environ.get("GITEA_URL", "").rstrip("/")
-    user = os.environ.get("GITEA_USER", "")
     token = os.environ.get("GITEA_TOKEN", "")
-    raw = None
-    if url and user and token:
-        req = urllib.request.Request(f"{url}/api/v1/users/{user}/heatmap", headers={
-            "Authorization": f"token {token}", "User-Agent": "profile-builder"})
-        try:
-            with urllib.request.urlopen(req, timeout=20) as r:
-                raw = json.load(r)
-        except Exception as exc:  # unreachable or bad token: carry on with GitHub only
-            print(f"warning: Gitea heatmap unavailable ({exc})", file=sys.stderr)
+    if not (url and token):
+        return None, None
+    req = urllib.request.Request(f"{url}/api/v1{path}", headers={
+        "Authorization": f"token {token}", "User-Agent": "profile-builder"})
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            return json.load(r), r.headers
+    except Exception as exc:  # unreachable, bad token or missing scope: carry on without it
+        print(f"warning: Gitea request {path.split('?')[0]} failed ({exc})", file=sys.stderr)
+        return None, None
+
+
+def fetch_gitea_days():
+    user = os.environ.get("GITEA_USER", "")
+    raw = gitea_get(f"/users/{user}/heatmap")[0] if user else None
     if raw is None and GITEA_FILE.exists():
         raw = json.loads(GITEA_FILE.read_text())
     days = {}
@@ -119,6 +128,29 @@ def fetch_gitea():
         day = dt.datetime.fromtimestamp(entry["timestamp"], LOCAL_TZ).date().isoformat()
         days[day] = days.get(day, 0) + entry["contributions"]
     return days
+
+
+def fetch_gitea_prs():
+    """Pull requests you opened on Gitea, all time and any state (needs issue Read)."""
+    query = "/repos/issues/search?type=pulls&created=true&state=all&limit=50&page={}"
+    first, headers = gitea_get(query.format(1))
+    if first is not None:
+        total = headers.get("X-Total-Count") if headers else None
+        if total is not None:
+            return int(total)
+        count, page, batch = 0, 1, first
+        while batch:  # older Gitea without the total header: count page by page
+            count += len(batch)
+            page += 1
+            batch = gitea_get(query.format(page))[0] if len(batch) == 50 else []
+        return count
+    if GITEA_PRS_FILE.exists():
+        return int(json.loads(GITEA_PRS_FILE.read_text()))
+    return 0
+
+
+def fetch_gitea():
+    return {"days": fetch_gitea_days(), "prs": fetch_gitea_prs()}
 
 
 def relevel(weeks):
@@ -136,14 +168,15 @@ def relevel(weeks):
     return [[(wd, level(c), c, day) for wd, _, c, day in w] for w in weeks]
 
 
-def merge_gitea(d, extra):
-    if not extra:
-        return d
-    weeks = [[(wd, lvl, c + extra.get(day, 0), day) for wd, lvl, c, day in w] for w in d["weeks"]]
-    d["weeks"] = relevel(weeks)
-    d["total"] = sum(c for w in weeks for _, _, c, _ in w)
-    d["year_total"] += sum(v for day, v in extra.items() if day.startswith(f"{d['year']}-"))
-    d["work"] = True
+def merge_gitea(d, gitea):
+    days, prs = gitea.get("days") or {}, gitea.get("prs") or 0
+    d["prs"] += prs
+    if days:
+        weeks = [[(wd, lvl, c + days.get(day, 0), day) for wd, lvl, c, day in w] for w in d["weeks"]]
+        d["weeks"] = relevel(weeks)
+        d["total"] = sum(c for w in weeks for _, _, c, _ in w)
+        d["year_total"] += sum(v for day, v in days.items() if day.startswith(f"{d['year']}-"))
+    d["work"] = bool(days or prs)
     return d
 
 
