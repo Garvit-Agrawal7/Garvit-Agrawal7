@@ -27,6 +27,10 @@ jobs:
           GH_USER: Garvit-Agrawal7
           # Optional: add a personal access token as GH_STATS_TOKEN to include private contributions.
           GH_TOKEN: ${{ secrets.GH_STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          # Optional: work contributions from Gitea (only daily counts are read).
+          GITEA_URL: ${{ secrets.GITEA_URL }}
+          GITEA_USER: ${{ secrets.GITEA_USER }}
+          GITEA_TOKEN: ${{ secrets.GITEA_TOKEN }}
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
