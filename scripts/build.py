@@ -150,7 +150,14 @@ def fetch_gitea_prs():
 
 
 def fetch_gitea():
-    return {"days": fetch_gitea_days(), "prs": fetch_gitea_prs()}
+    missing = [k for k in ("GITEA_URL", "GITEA_USER", "GITEA_TOKEN") if not os.environ.get(k)]
+    if missing and len(missing) < 3:
+        print(f"warning: Gitea skipped, secret(s) not set: {', '.join(missing)}", file=sys.stderr)
+    elif missing:
+        print("Gitea: not configured")
+    days, prs = fetch_gitea_days(), fetch_gitea_prs()
+    print(f"Gitea: {sum(days.values())} contributions on {len(days)} days, {prs} pull requests")
+    return {"days": days, "prs": prs}
 
 
 def relevel(weeks):
